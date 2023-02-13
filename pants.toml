@@ -1,0 +1,27 @@
+[GLOBAL]
+pants_version = "2.16.0.dev6"
+backend_packages = [
+    "pants.backend.python",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.typecheck.mypy",
+    "pants.backend.experimental.python",
+    "pants.backend.experimental.python.lint.ruff",
+    "pants.backend.shell",
+    "pants.backend.shell.lint.shellcheck",
+    "pants.backend.shell.lint.shfmt",
+]
+colors = true
+
+[anonymous-telemetry]
+enabled = true
+repo_id = "1b8d6529-2349-425b-ba7c-94c7d03203db"
+
+# https://www.pantsbuild.org/docs/reference-source
+[source]
+root_patterns = ['/src/python/*']
+
+# https://www.pantsbuild.org/docs/reference-python
+[python]
+interpreter_constraints = ["~=3.10"]
+tailor_ignore_empty_init_files = false
+enable_resolves = true
